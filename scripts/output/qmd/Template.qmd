@@ -10,7 +10,7 @@ date: last-modified
 bibliography: references.bib
 ---
 
-```r
+```{r}
 library(here)
 load(.)
 ```
@@ -18,13 +18,13 @@ load(.)
 # Tables
 
 ## Table 1
-```r
-# code for figure
+```{r}
+# code for table code
 ```
 
 # Figures
 ## Figure 1
-```r
+```{r}
 # figure code
 ```
 
