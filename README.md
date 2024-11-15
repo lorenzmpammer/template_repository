@@ -1,22 +1,33 @@
-# template_repository
-This is a template for a data analysis repository in R.
-The folder structure intends to group the scripts according to their use.
-## Data
-This folder contains the data , with sub-folders for each file-type.
-CSV, Excel and R-Workspaces are saved in separate folders.
-There is also a folder called processed, which contains RData files, which contain results of models, table objects and so forth, which are in turn then imported in the Quarto documents, to create output.
-## Scripts
-These are the executable files. These are grouped into subgroups once more.
-### import
-Imports the data and puts into an R ready-format. This uses *tidyverse* and intends to process data in order to use it in further analysis later on.
-### processing
-This loads the data and creates subframes/workspaces to make working with data easier
-### analysis
-this is intended for using the processed workspaces or data to create summary statistics / models ...
-### output
-#### qmd
-This contains the necessary QMD files to create a PDF output of the results. A template PDF file is included and uses the Latex Eisvogel template.
-#### images
-This contains the scripts which are used to export figures as svg/png etc.
+# Template Repository
+
+This is a template for a data analysis repository in R. The folder structure is designed to group scripts according to their use.
+
+## Folder Structure
+
+### Data
+This folder contains the data, organized into sub-folders by file type:
+- **CSV**: Contains CSV files.
+- **Excel**: Contains Excel files.
+- **R-Workspaces**: Contains R workspace files.
+- **Processed**: Contains RData files with results of models, table objects, and other outputs used in Quarto documents to generate final reports.
+
+### Scripts
+These are the executable files, grouped into subcategories:
+
+#### Import
+- Imports the data and formats it for R. This section uses the *tidyverse* to process data for further analysis.
+
+#### Processing
+- Loads the data and creates subframes/workspaces to facilitate easier data handling.
+
+#### Analysis
+- Utilizes processed workspaces or data to generate summary statistics and models.
+
+#### Output
+- **QMD**: Contains necessary QMD files to create a PDF output of the results. A template PDF file is included, utilizing the LaTeX Eisvogel template.
+- **Images**: Contains scripts for exporting figures in formats such as SVG and PNG.
+
 ## Output
-contains an image folder for image export (images) and for documents (PDFs etc.)
+This section contains:
+- **Images Folder**: For exported images.
+- **Documents Folder**: For output documents (e.g., PDFs).
