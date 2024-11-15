@@ -13,8 +13,10 @@ Imports the data and puts into an R ready-format. This uses *tidyverse* and inte
 This loads the data and creates subframes/workspaces to make working with data easier
 ### analysis
 this is intended for using the processed workspaces or data to create summary statistics / models ...
-### QMD
+### output
+#### qmd
 This contains the necessary QMD files to create a PDF output of the results. A template PDF file is included and uses the Latex Eisvogel template.
-
+#### images
+This contains the scripts which are used to export figures as svg/png etc.
 ## Output
 contains an image folder for image export (images) and for documents (PDFs etc.)
