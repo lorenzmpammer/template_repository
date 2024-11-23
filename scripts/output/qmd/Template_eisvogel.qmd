@@ -1,22 +1,25 @@
 ---
-title: Template
+title: Differences across HFE genotypes in serum iron parameters at genotyping
 author: Lorenz M. Pammer, MD
 date: last-modified
 editor: source
-documentclass: article
 page-layout: full
 format:
   eisvogel-pdf:
     default:
       fig-align: center
+      fig-width: 10
+      fig-asp: 0.618
+      fig-dpi: 300
       papersize: a4
-      classoption: landscape
+      layout: constrained
       geometry:
         - top=30mm
         - bottom=30mm
         - heightrounded
       mainfont: Source Sans Pro
       sansfont: Source Sans Pro
+      fig-responsive: false
   html:
     figure-width: 100%
     fig-align: center
@@ -32,30 +35,72 @@ execute:
 library(here)
 library(gtsummary)
 library(tidyverse)
-#load(.)
+library(showtext)
+library(kableExtra)
+load(here::here("./data/workspaces/processed/for_qmd/","file.RData"))
+showtext_auto()
+
+
 ```
 
 # Tables
 
 ## Table 1
+@tbl-baseline1 shows the baseline characteristics of the study population, stratified by HFE genotype.
+
 ```{r}
-#| label: tbl-baseline
+#| label: tbl-baseline1
 #| fig-cap: "Table 1 - baseline statistics"
-iris %>%
-  tbl_summary(by = Species)
+tbl_sum1 %>% 
+  modify_table_body(
+    ~ .x %>% mutate(across(where(is.character), ~ gsub("N=", "\nN=",.)))
+                           )%>%
+  modify_header(all_stat_cols() ~"**{level}**, \n N = {n}")   -> tbl1
+  
+tbl1 %>% as_flex_table() %>% flextable::set_table_properties(., layout = "autofit")
 ```
 
-
-See @tbl-baseline for baseline statistics.
-
+\newpage
 
 # Figures
 ## Figure 1
-@fig-num1 shows the diferences between groups.
-```{r }
+@fig-num1 shows the different distributions of ferritin across genotypes.
+
+```{r}
 #| label: fig-num1
-#| fig-cap: "Figure 1 - ... "
-ggplot(iris) + aes(group=Species,x=Sepal.Length,y=Sepal.Width)+
-  geom_point()
-# figure code
+#| fig-cap: "Ferritin between genotypes, split by sex "
+#| fig-width: 5
+#| fig-height: 6
+# ggplot_ob
+
+``` 
+\newpage
+## Figure 2
+@fig-num2 shows the different distributions of log10(ferritin) across genotypes.
+```{r}
+#| label: fig-num2
+#| fig-cap: "Log10(ferritin) between genotypes, split by sex "
+#| fig-width: 5
+#| fig-height: 6
+# ggplot_ob
+``` 
+\newpage
+## Figure 3
+@fig-num3 shows the different distributions of TSAT across genotypes.
+```{r }
+#| label: fig-num3
+#| fig-cap: "TSAT between genotypes, split by sex "
+#| fig-width: 5
+#| fig-height: 6
+# ggplot_ob
+``` 
+\newpage
+## Figure 4
+@fig-num4 shows the different distributions of serum iron across genotypes.
+```{r }
+#| label: fig-num4
+#| fig-cap: "Serum iron between genotypes, split by sex "
+#| fig-width: 5
+#| fig-height: 6
+# ggplot_ob
 ``` 
