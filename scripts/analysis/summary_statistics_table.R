@@ -14,6 +14,7 @@ statistic_list <- list(
 data %>%
   tbl_summary(
     missing = "no",  # Exclude missing values
+    unknown = "no",  # Exclude unknown values
     statistic = statistic_list,  # Apply custom statistics
     label = label_list  # Apply custom labels
   ) %>%
